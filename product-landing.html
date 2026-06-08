@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Crary Dost — Premium Sleek Veller</title>
+<meta name="description" content="ساعة ذكية فاخرة بتصميم عصري وشاشة AMOLED — اطلب الآن مع شحن سريع لجميع ولايات الجزائر"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════
+     ⚙️  إعدادات صاحب الصفحة — عدّل هنا فقط
+     ════════════════════════════════════════════ -->
+<script>
+const CONFIG = {
+  // ── معلومات المنتج
+  productName:  "ساعة Sleek Veller Premium",
+  productEmoji: "⌚",
+  productImage: "image/1-14.webp", // ضع رابط صورة المنتج هنا (مثلاً: images/watch.png)
+  productDesc:  "ساعة ذكية فاخرة بتصميم عصري وشاشة AMOLED",
+  priceNow:     "4500 دج",
+  priceOld:     "7000 دج",
+  priceSave:    "وفّر 2500 دج",
+
+  // ── بيانات التواصل (صاحب الصفحة يعدّلها)
+  whatsappNumber: "213696741267",   // ← ضع رقمك مع رمز البلد بدون +
+  emailAddress:   "aymenka144@email.com", // ← ضع بريدك الإلكتروني
+
+  // ── Google Sheets (اختياري — انظر التعليمات أسفله)
+  googleSheetWebhook: "",  // ← ضع رابط Apps Script هنا
+
+  // ── خيارات المنتج
+  variants: ["أسود", "فضي", "أزرق"],
+  sizes:    ["M", "L", "XL"],
+  maxQty:   10, // ← الحد الأقصى للكمية حسب المخزون المتوفر
+
+  // ── معلومات الشحن
+  shippingNote: "التوصيل خلال 2-4 أيام عمل لجميع ولايات الجزائر",
+};
+</script>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-logo">Crary <span>Dost</span></div>
+  <button class="nav-badge" id="nav-order-btn" onclick="scrollToOrder()">اطلب الآن ↓</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">متوفر الآن — شحن سريع</div>
+    <h1 id="hero-title">Premium<br/><em>Sleek Veller</em></h1>
+    <p class="hero-sub" id="hero-desc">ساعة ذكية فاخرة بتصميم عصري وشاشة AMOLED تدوم بطاريتها أسبوعاً كاملاً.</p>
+    <div class="hero-price">
+      <span class="price-now" id="price-now">4500 دج</span>
+      <span class="price-old" id="price-old">7000 دج</span>
+      <span class="price-save" id="price-save">وفّر 2500 دج</span>
+    </div>
+    <button class="btn-order" id="hero-order-btn" onclick="scrollToOrder()">
+      <span class="icon">🛒</span> اطلب الآن
+    </button>
+  </div>
+
+  <div class="hero-img">
+    <div class="phone-mockup">
+      <div class="product-container">
+        <img id="product-main-img" src="" alt="" style="display:none;" class="real-product-img"/>
+        <div class="product-emoji" id="hero-emoji">⌚</div>
+      </div>
+      <div class="phone-product-name" id="phone-name">Sleek Veller</div>
+      <div class="phone-product-price" id="phone-price">4500 دج</div>
+      <div class="glow-line glow-line-1"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="t-icon">🚚</span> توصيل لكل الجزائر</div>
+  <div class="trust-item"><span class="t-icon">✅</span> منتج أصلي مضمون</div>
+  <div class="trust-item"><span class="t-icon">🔄</span> استبدال مجاني</div>
+  <div class="trust-item"><span class="t-icon">💳</span> الدفع عند الاستلام</div>
+</div>
+
+<!-- FEATURES -->
+<section class="features">
+  <h2 class="section-title fade-up">لماذا <span>Sleek Veller</span>؟</h2>
+  <div class="features-grid">
+    <div class="feature-card fade-up">
+      <div class="feature-icon">⚡</div>
+      <div class="feature-title">شاشة AMOLED</div>
+      <div class="feature-desc">وضوح استثنائي حتى تحت أشعة الشمس المباشرة</div>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-icon">🔋</div>
+      <div class="feature-title">بطارية أسبوع</div>
+      <div class="feature-desc">شحنة واحدة تكفيك 7 أيام من الاستخدام المكثف</div>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-icon">💧</div>
+      <div class="feature-title">مقاومة للماء</div>
+      <div class="feature-desc">تصنيف IP68 — يرافقك في السباحة والرياضة</div>
+    </div>
+    <div class="feature-card fade-up">
+      <div class="feature-icon">❤️</div>
+      <div class="feature-title">مراقبة صحية</div>
+      <div class="feature-desc">نبضات القلب، الأكسجين، وتتبع النوم تلقائياً</div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER FORM -->
+<section class="order-section" id="order-section">
+  <div class="order-card fade-up">
+    <div class="order-title">🛒 أكمل طلبك الآن</div>
+    <div class="order-sub" id="shipping-note">التوصيل خلال 2-4 أيام لجميع ولايات الجزائر</div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">الاسم الكامل *</label>
+        <input class="form-input" id="f-name" placeholder="محمد أمين" required/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">رقم الهاتف *</label>
+        <input class="form-input" id="f-phone" type="tel" placeholder="0555 XX XX XX" required/>
+      </div>
+    </div>
+// يمكنك تعديل قائمة الولايات حسب بلدك أو حسب المناطق التي تخدمها، تأكد فقط من تحديث الخيارات في CONFIG إذا لزم الأمر.
+    <div class="form-group">
+      <label class="form-label">الولاية *</label>
+      <select class="form-select" id="f-city">
+        <option value="">— اختر الولاية —</option>
+        <option>أدرار</option><option>الشلف</option><option>الأغواط</option>
+        <option>أم البواقي</option><option>باتنة</option><option>بجاية</option>
+        <option>بسكرة</option><option>بشار</option><option>البليدة</option>
+        <option>البويرة</option><option>تمنراست</option><option>تبسة</option>
+        <option>تلمسان</option><option>تيارت</option><option>تيزي وزو</option>
+        <option>الجزائر العاصمة</option><option>الجلفة</option><option>جيجل</option>
+        <option>سطيف</option><option>سعيدة</option><option>سكيكدة</option>
+        <option>سيدي بلعباس</option><option>عنابة</option><option>قالمة</option>
+        <option>قسنطينة</option><option>المدية</option><option>مستغانم</option>
+        <option>المسيلة</option><option>معسكر</option><option>ورقلة</option>
+        <option>وهران</option><option>البيض</option><option>إليزي</option>
+        <option>برج بوعريريج</option><option>بومرداس</option><option>الطارف</option>
+        <option>تندوف</option><option>تيسمسيلت</option><option>الوادي</option>
+        <option>خنشلة</option><option>سوق أهراس</option><option>تيبازة</option>
+        <option>ميلة</option><option>عين الدفلى</option><option>النعامة</option>
+        <option>عين تيموشنت</option><option>غرداية</option><option>غليزان</option>
+        <option>تيميمون</option><option>برج باجي مختار</option><option>أولاد جلال</option>
+        <option>بني عباس</option><option>عين صالح</option><option>عين قزام</option>
+        <option>توقرت</option><option>جانت</option><option>المغير</option><option>المنيعة</option>
+      </select>
+    </div>
+
+    <div class="form-group" id="variant-group" style="display:none">
+      <label class="form-label">اللون / الإصدار</label>
+      <select class="form-select" id="f-variant"></select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">الكمية</label>
+      <select class="form-select" id="f-qty">
+        <!-- يتم ملؤها تلقائياً من CONFIG.maxQty -->
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">ملاحظات إضافية (اختياري)</label>
+      <textarea class="form-textarea" id="f-note" placeholder="عنوان التوصيل أو أي ملاحظة..."></textarea>
+    </div>
+
+    <button class="btn-submit" id="btn-submit" onclick="submitOrder()">
+      <span>💬</span> تأكيد الطلب عبر واتساب
+    </button>
+
+    <div class="secure-note">🔒 معلوماتك محمية — الدفع عند الاستلام</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p id="footer-text">© 2025 Crary Dost — جميع الحقوق محفوظة</p>
+</footer>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-icon">🎉</div>
+    <div class="modal-title">تم استلام طلبك!</div>
+    <div class="modal-sub">
+      سيتواصل معك فريقنا خلال أقل من ساعة لتأكيد الطلب وتحديد موعد التوصيل.<br/><br/>
+      <strong>شكراً لثقتك بنا ❤️</strong>
+    </div>
+    <button class="modal-close" id="modal-close-btn" onclick="closeModal()">حسناً، شكراً!</button>
+  </div>
+</div>
+
+<!-- ════ SCRIPTS ════ -->
+<script>
+// ── تطبيق الإعدادات على الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+  const emojiEl = document.getElementById('hero-emoji');
+  const imgEl = document.getElementById('product-main-img');
+
+  // تحسين تحميل الصورة من السيرفر
+  if (CONFIG.productImage) {
+    imgEl.src = CONFIG.productImage;
+    imgEl.onload = () => {
+      imgEl.style.display = 'block';
+      emojiEl.style.display = 'none';
+    };
+    imgEl.onerror = () => {
+      console.error("فشل تحميل صورة المنتج، سيتم استخدام الـ Emoji كبديل.");
+      emojiEl.style.display = 'block';
+    };
+  } else {
+    emojiEl.textContent = CONFIG.productEmoji;
+  }
+  document.getElementById('hero-desc').textContent    = CONFIG.productDesc;
+  document.getElementById('price-now').textContent    = CONFIG.priceNow;
+  document.getElementById('price-old').textContent    = CONFIG.priceOld;
+  document.getElementById('price-save').textContent   = CONFIG.priceSave;
+  document.getElementById('phone-price').textContent  = CONFIG.priceNow;
+  document.getElementById('phone-name').textContent   = CONFIG.productName;
+  document.getElementById('shipping-note').textContent = CONFIG.shippingNote;
+
+  // خيارات المنتج (ألوان/إصدارات)
+  if (CONFIG.variants && CONFIG.variants.length > 0) {
+    const vg = document.getElementById('variant-group');
+    const vs = document.getElementById('f-variant');
+    vg.style.display = 'block';
+    CONFIG.variants.forEach(v => {
+      const o = document.createElement('option');
+      o.textContent = v; vs.appendChild(o);
+    });
+  }
+
+  // الكمية حسب المخزون
+  const qtySelect = document.getElementById('f-qty');
+  const max = CONFIG.maxQty || 5;
+  for (let i = 1; i <= max; i++) {
+    const o = document.createElement('option');
+    o.value = i;
+    o.textContent = i === 1 ? '1 قطعة' : i + ' قطع';
+    qtySelect.appendChild(o);
+  }
+
+  // ── Scroll animations (IntersectionObserver)
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // ── Nav scroll effect
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+});
+
+// ── Scroll to order
+function scrollToOrder() {
+  document.getElementById('order-section').scrollIntoView({ behavior:'smooth' });
+}
+
+// ── Submit order
+async function submitOrder() {
+  const name    = document.getElementById('f-name').value.trim();
+  const phone   = document.getElementById('f-phone').value.trim();
+  const city    = document.getElementById('f-city').value;
+  const qty     = document.getElementById('f-qty').value;
+  const note    = document.getElementById('f-note').value.trim();
+  const variant = document.getElementById('f-variant')?.value || '';
+
+  // Validation
+  if (!name)  { alert('الرجاء إدخال الاسم الكامل'); return; }
+  if (!phone) { alert('الرجاء إدخال رقم الهاتف'); return; }
+  if (!city)  { alert('الرجاء اختيار الولاية'); return; }
+
+  // التحقق من رقم الواتساب قبل الإرسال
+  if (CONFIG.whatsappNumber.includes('X')) {
+    alert('خطأ في الإعدادات: يرجى وضع رقم واتساب صحيح في قسم CONFIG');
+    return;
+  }
+
+  const btn = document.getElementById('btn-submit');
+  btn.disabled = true;
+  btn.innerHTML = '<span>⏳</span> جاري الإرسال...';
+
+  const orderDate = new Date().toLocaleString('ar-DZ');
+  const orderId   = 'ORD-' + Date.now().toString().slice(-6);
+
+  // ── 1. بناء رسالة واتساب
+  const waMessage = encodeURIComponent(
+`🛒 *طلب جديد — ${CONFIG.productName}*
+━━━━━━━━━━━━━━━━━━
+🆔 رقم الطلب: ${orderId}
+👤 الاسم: ${name}
+📞 الهاتف: ${phone}
+📍 الولاية: ${city}
+📦 الكمية: ${qty}
+${variant ? '🎨 اللون: ' + variant : ''}
+💰 الإجمالي: ${CONFIG.priceNow} × ${qty}
+${note ? '📝 ملاحظة: ' + note : ''}
+━━━━━━━━━━━━━━━━━━
+⏰ ${orderDate}`
+  );
+
+  // ── 2. فتح واتساب
+  const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${waMessage}`;
+  window.open(waUrl, '_blank');
+
+  // ── 3. إرسال إيميل (mailto)
+  const emailSubject = encodeURIComponent(`طلب جديد ${orderId} — ${CONFIG.productName}`);
+  const emailBody = encodeURIComponent(
+`طلب جديد — ${CONFIG.productName}
+رقم الطلب: ${orderId}
+الاسم: ${name}
+الهاتف: ${phone}
+الولاية: ${city}
+الكمية: ${qty}
+${variant ? 'اللون: ' + variant : ''}
+الإجمالي: ${CONFIG.priceNow} × ${qty}
+${note ? 'ملاحظة: ' + note : ''}
+التاريخ: ${orderDate}`
+  );
+  setTimeout(() => {
+    window.location.href = `mailto:${CONFIG.emailAddress}?subject=${emailSubject}&body=${emailBody}`;
+  }, 1000);
+
+  // ── 4. حفظ في Google Sheets (إن كان الـ Webhook موجوداً)
+  if (CONFIG.googleSheetWebhook) {
+    try {
+      await fetch(CONFIG.googleSheetWebhook, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' }, // تغيير هذا النوع يقلل مشاكل السيرفر
+        body: JSON.stringify({
+          orderId, name, phone, city, qty, variant,
+          product: CONFIG.productName,
+          price: CONFIG.priceNow,
+          note, date: orderDate
+        })
+      });
+    } catch(e) { console.log('Sheets error:', e); }
+  }
+
+  // ── 5. إظهار رسالة النجاح
+  setTimeout(() => {
+    btn.disabled = false;
+    btn.innerHTML = '<span>💬</span> تأكيد الطلب عبر واتساب';
+    document.getElementById('modal').classList.add('show');
+    // تفريغ الفورم
+    ['f-name','f-phone','f-note'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('f-city').value = '';
+    document.getElementById('f-qty').value = '1';
+  }, 2000);
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('show');
+}
+</script>
+
+<!--
+════════════════════════════════════════════════════════
+  📋 تعليمات ربط Google Sheets (خطوتان فقط)
+════════════════════════════════════════════════════════
+
+الخطوة 1: أنشئ Google Sheet جديد وأضف هذه العناوين في الصف الأول:
+  A: orderId | B: date | C: name | D: phone | E: city
+  F: qty | G: variant | H: product | I: price | J: note
+
+الخطوة 2: في القائمة → Extensions → Apps Script، الصق هذا الكود:
+
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var data  = JSON.parse(e.postData.contents);
+  sheet.appendRow([
+    data.orderId, data.date, data.name, data.phone,
+    data.city, data.qty, data.variant, data.product,
+    data.price, data.note
+  ]);
+  return ContentService.createTextOutput('OK');
+}
+
+ثم: Deploy → New deployment → Web app → Anyone → Deploy
+انسخ الرابط وضعه في CONFIG.googleSheetWebhook أعلاه.
+
+════════════════════════════════════════════════════════
+-->
+</body>
+</html>
